@@ -139,7 +139,7 @@ class FrameExtractorThread(QThread):
                 # Extract frames within this interval
                 frames_in_interval = min(self.frames_per_second * frame_interval, end_frame - start_frame)
                 if frames_in_interval > 0:
-                    frame_indices = np.linspace(start_frame, end_frame - 1, frames_in_interval, dtype=int)
+                    frame_indices = np.linspace(start_frame, end_frame - 1, int(frames_in_interval), dtype=int)
                 else:
                     frame_indices = [start_frame] if start_frame < total_frames else []
                 
